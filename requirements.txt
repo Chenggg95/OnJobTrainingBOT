@@ -631,7 +631,7 @@ pysbd==0.3.4
     # via
     #   -r requirements.in
     #   ragas
-pysqlite3==0.5.4
+pysqlite3-binary==0.5.4
     # via -r requirements.in
 python-dateutil==2.8.2
     # via
