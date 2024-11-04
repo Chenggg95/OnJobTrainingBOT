@@ -10,10 +10,18 @@ if not check_password():
 # region <--------- Streamlit App Configuration --------->
 st.set_page_config(layout="centered", page_title="On Job Training Material Website")
 # endregion <--------- Streamlit App Configuration --------->
+
 st.title("On Job Training Material Website")
+
+with st.expander("IMPORTANT NOTICE"):
+    st.write(f"""This web application is developed as a proof-of-concept prototype. The information provided here is NOT intended for actual usage and should not be relied upon for making any decisions, especially those related to financial, legal, or healthcare matters.
+                    Furthermore, please be aware that the LLM may generate inaccurate or incorrect information. You assume full responsibility for how you use any generated output.
+                    Always consult with qualified professionals for accurate and personalized advice.""")
+
 feature = st.radio("Select an option:", ("Ask a question", "Generate questions from the document"))
 
 if feature == "Ask a question":
+    
     user_question = st.text_input("What is your question?")
     if st.button("Get Answer"):
         answer = queryhandler.answer_user_question(user_question)
